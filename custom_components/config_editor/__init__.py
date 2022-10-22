@@ -98,7 +98,7 @@ async def websocket_create(hass, connection, msg):
             connection.send_result(msg["id"], {"msg": res + ": " + fullpath})
 
     elif action == "list":
-        listyaml = ["/packages/customer_spec/static_config.yaml"]
+        listyaml = ["/packages/customer_spec/static_config.yaml", "/ip_bans.yaml"]
         if len(listyaml) < 1:
             listyaml = ["list_error." + ext]
         _LOGGER.info(f"Loading files to edit: {listyaml}")
